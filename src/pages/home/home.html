@@ -5,13 +5,54 @@
 </ion-header>
 
 <ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+
+
+  <ion-segment [(ngModel)]="slamBar">
+    <ion-segment-button value="sent">
+    Sent 
+    <i class="fa fa-paper-plane" aria-hidden="true"></i> 
+    </ion-segment-button>
+    <ion-segment-button value="recieved">
+     Recieved
+    <i class="fa fa-envelope-open-o" aria-hidden="true"></i>
+    </ion-segment-button>
+    <ion-segment-button value="requested">
+     Requested
+    <i class="fa fa-level-up" aria-hidden="true"></i>
+    </ion-segment-button>
+  </ion-segment>
+
+
+<div [ngSwitch]="slamBar">
+  <ion-list *ngSwitchCase="'sent'">
+    <ion-item>
+      <ion-thumbnail item-start>
+      <i class="fa fa-paper-plane" aria-hidden="true"></i>
+        <img src="img/thumbnail-puppy-1.jpg">
+      </ion-thumbnail>
+      <h2>Ruby</h2>
+    </ion-item>
+  </ion-list>
+
+  <ion-list *ngSwitchCase="'recieved'">
+    <ion-item>
+      <ion-thumbnail item-start>
+        <img src="img/thumbnail-kitten-1.jpg">
+      </ion-thumbnail>
+      <h2>Luna</h2>
+    </ion-item>
+  </ion-list>
+   <ion-list *ngSwitchCase="'requested'">
+    <ion-item>
+      <ion-thumbnail item-start>
+        <img src="img/thumbnail-kitten-1.jpg">
+      </ion-thumbnail>
+      <h2>Luna</h2>
+    </ion-item>
+  </ion-list>
+</div>
+
+
+
+
 </ion-content>
